@@ -61,7 +61,16 @@ public class MyView extends FrameLayout
              * 设置向右平移20个像素
              * 设置向上平移多少个像素
              */
+            canvas.save();//保存当前canvas的状态，save之后 可以调用Canvas的平移、方缩 、 旋转、 错切 、 剪裁等操作
+            if (i < 5)
+            {
+                canvas.clipRect(i * 20, 0, (i + 1) * 20, imgs[i].getHeight());//裁剪出一块显示出来的矩形区域
+            } else
+            {
+                canvas.clipRect(i * 20, 0, i * 20 + imgs[i].getWidth(), imgs[i].getHeight());
+            }
             canvas.drawBitmap(imgs[i], i * 20, 0, paint);
+            canvas.restore();//用来恢复Canvas之前保存的状态，放置save后对Canvas执行的操作对后续的绘制影响
         }
     }
 }

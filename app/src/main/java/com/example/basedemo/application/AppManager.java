@@ -1,4 +1,4 @@
-package com.example.basedemo;
+package com.example.basedemo.application;
 
 import android.app.Activity;
 import android.content.Context;
