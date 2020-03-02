@@ -22,12 +22,12 @@ public class LoadActivity extends AppCompatActivity
 
     private void imgLoad()
     {
+        this.getApplicationContext();
         Picasso.with(this).load("www.baidu.com").into(new Target()
         {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from)
             {//当图片完成后 可以进行File文件缓存
-
 
             }
 
