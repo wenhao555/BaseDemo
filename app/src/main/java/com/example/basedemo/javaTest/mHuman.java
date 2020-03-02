@@ -5,5 +5,10 @@ public abstract class mHuman implements mInter {
         eat();
         mHuman human = new man();//抽象类实现
         human.eat();
+        human.mm();
+    }
+
+    void mm() {
+
     }
 }

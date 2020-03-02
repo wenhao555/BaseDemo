@@ -6,4 +6,6 @@ public class man  extends mHuman {
     public void eat() {
 
     }
+
+
 }
