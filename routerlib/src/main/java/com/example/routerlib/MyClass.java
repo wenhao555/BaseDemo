@@ -5,7 +5,7 @@ import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
-@RouterAnnotation(value = "sad")//, location = {MyClass.class}, as = RouterAnnotation.ASD.AAA)
+//@RouterAnnotation(value = "sad")//, location = {MyClass.class}, as = RouterAnnotation.ASD.AAA)
 public class MyClass
 {
     @Deprecated//过时注解
@@ -22,7 +22,7 @@ public class MyClass
     /**
      *
      */
-    @SuppressWarnings({"unchecked", "rawtypes"})//压制警告注解 1 不检查 2 压制泛型的警告
+//    @SuppressWarnings({"unchecked", "rawtypes"})//压制警告注解 1 不检查 2 压制泛型的警告
     private void listS()
     {
         List list = new ArrayList();

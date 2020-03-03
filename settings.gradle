@@ -1,2 +1,4 @@
 include ':app', ':routerlib'
 rootProject.name='BaseDemo'
+include ':annoata-compile'
+include ':loginmodule'

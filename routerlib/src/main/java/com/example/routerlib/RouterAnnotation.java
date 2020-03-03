@@ -14,8 +14,8 @@ import java.lang.annotation.Target;
  */
 
 
-@Target(ElementType.TYPE)//代表这个注解可以放在在哪里    有  构造器（Co） 包 方法 类(type) 属性 (Fled)等分别可以指定多个 用{ 1 , 2 }
-@Retention(RetentionPolicy.RUNTIME)//  cLASS 和 Source在运行时无效
+@Target(ElementType.FIELD)//代表这个注解可以放在在哪里    有  构造器（Co） 包 方法 类(type) 属性 (Fled)等分别可以指定多个 用{ 1 , 2 }
+@Retention(RetentionPolicy.SOURCE)//  cLASS 和 Source在运行时无效
 public @interface RouterAnnotation //非标识性注解
 {
     /**
