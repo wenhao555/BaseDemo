@@ -22,7 +22,6 @@ public class MyClass
     /**
      *
      */
-//    @SuppressWarnings({"unchecked", "rawtypes"})//压制警告注解 1 不检查 2 压制泛型的警告
     private void listS()
     {
         List list = new ArrayList();

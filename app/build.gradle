@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion compile_sdk_version.toInteger()
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.basedemo"
@@ -19,10 +19,12 @@ android {
 
             }
         }
+
         viewBinding {
             enabled = true
         }
     }
+    resourcePrefix ""
     buildTypes {
         release {
             minifyEnabled false
@@ -35,16 +37,25 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
     implementation 'com.alibaba:arouter-api:1.3.1'
+    api "com.android.support:appcompat-v7:$support_version"    // 需要用到$符号表示引用，同时使用双引号
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-    implementation project(path: ':loginmodule')
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
+    //组件化 所有phone module组件依赖Andorid lib   app 依赖所有组件
+    implementation project(path: ':androidlib')
+    implementation project(path: ':annoata-compile')
+    implementation project(path: ':routerlib')
+    if (!registAppRunlone.toBoolean()) {
+        implementation project(path: ':registmodule')
+    }
+
 }

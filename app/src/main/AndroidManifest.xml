@@ -14,11 +14,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".jetpac.MyActivity"></activity>
         <activity android:name=".jetpac.NativaActivity" />
-        <activity android:name=".LoginnActivity" />
+        <activity android:name=".arouter.LoginnActivity" />
         <activity android:name=".net.taskNetActivity" />
         <activity android:name=".net.LoadActivity" />
         <activity android:name=".mviews.mViewActivity" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".arouter.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -40,7 +41,14 @@ public class ThreadPool
                         1,
                         TimeUnit.SECONDS,
                         new LinkedBlockingQueue<Runnable>(50)
-                );
+                        , new RejectedExecutionHandler()
+                {
+                    @Override
+                    public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor)
+                    {
+                        //丢回来的任务线程
+                    }
+                });
 
         for (int i = 1; i < 10; i++)
         {
@@ -65,4 +73,21 @@ public class ThreadPool
         }
     }
 
+    private void queue()
+    {
+        //带阻塞队列
+        LinkedBlockingQueue<Runnable> runnables = new LinkedBlockingQueue<>();
+    }
+
+    private Runnable runnable = new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            while (true)
+            {
+
+            }
+        }
+    };
 }
