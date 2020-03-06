@@ -67,6 +67,7 @@ public class MyView extends FrameLayout
              * 设置图片员
              * 设置向右平移20个像素
              * 设置向上平移多少个像素
+             *
              */
             canvas.save();//保存当前canvas的状态，save之后 可以调用Canvas的平移、方缩 、 旋转、 错切 、 剪裁等操作
             if (i < 5)
