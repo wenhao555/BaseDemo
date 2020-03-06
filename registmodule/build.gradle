@@ -22,9 +22,9 @@ android {
 
     sourceSets {
         main {
-            if (registAppRunlone.toBoolean()) {
-                manifest.srcFile '/src/main/AndroidMainfest.xml'
-            }
+//            if (registAppRunlone.toBoolean()) {
+//                manifest.srcFile '/src/main/AndroidMainfest.xml'
+//            }
         }
     }
     buildTypes {
