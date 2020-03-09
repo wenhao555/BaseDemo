@@ -1,5 +1,7 @@
 package com.example.basedemo.thread;
 
+import java.util.concurrent.Callable;
+
 public class ThreadTest
 {
     private static volatile boolean stop = true; //走一次线程之后停止
@@ -44,5 +46,13 @@ public class ThreadTest
         System.out.println("线程开始");
         thread.interrupt();
 //        stop = true;
+    }
+    private class Mcall implements Callable{
+
+        @Override
+        public Object call() throws Exception
+        {
+            return null;
+        }
     }
 }
