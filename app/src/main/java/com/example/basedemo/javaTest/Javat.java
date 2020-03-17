@@ -11,4 +11,5 @@ public class Javat
         list.add(new man());
         list.get(0).eat();
     }
+
 }

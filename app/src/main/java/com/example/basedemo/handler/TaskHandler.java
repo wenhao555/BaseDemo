@@ -159,5 +159,6 @@ public class TaskHandler<T> extends Handler {
      */
     public void onTaskCanceled(T object, Message msg) {
 
+
     }
 }

@@ -33,7 +33,7 @@ public class BroadcastActivity extends BaseActivity {
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         receiver = new NetWorkChangeReceiver();
-//        registerReceiver(receiver, intentFilter);
+        registerReceiver(receiver, intentFilter);
     }
 
     @Override

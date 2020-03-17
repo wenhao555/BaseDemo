@@ -31,6 +31,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -51,12 +55,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
     //组件化 所有phone module组件依赖Andorid lib   app 依赖所有组件
-    implementation project(path: ':androidlib')
-    implementation project(path: ':annoata-compile')
-    implementation project(path: ':routerlib')
-    if (!registAppRunlone.toBoolean()) {
-        implementation project(path: ':registmodule')
-    }
+//    implementation project(path: ':androidlib')
+//    implementation project(path: ':annoata-compile')
+//    implementation project(path: ':routerlib')
+//    if (!registAppRunlone.toBoolean()) {
+//        implementation project(path: ':registmodule')
+//    }
 //    implementation 'io.reactivex:rxjava:3.0.0'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation "io.reactivex.rxjava3:rxjava:3.0.0"
@@ -68,5 +72,4 @@ dependencies {
     implementation "androidx.room:room-guava:$room_version"
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
-
 }
