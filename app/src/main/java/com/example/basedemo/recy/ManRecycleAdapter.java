@@ -52,7 +52,6 @@ public class ManRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         View view = View.inflate(context, R.layout.recycler_item, null);
-
         RecyclerView.ViewHolder viewHolder = null;
         if (viewType == 1)
         {
@@ -78,7 +77,7 @@ public class ManRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         } else
         {
-            adapter.onBindViewHolder(holder,position-1);
+            adapter.onBindViewHolder(holder, position - 1);
             ((MyViewHolder) holder).name.setText(accounts.get(position).getName());
             ((MyViewHolder) holder).age.setText(accounts.get(position).getAge() + "");
         }
