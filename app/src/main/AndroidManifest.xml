@@ -3,6 +3,11 @@
     package="com.example.basedemo">
     <!-- 获取网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
 
     <application
         android:name=".application.MyApplication"
@@ -13,13 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".recy.RecyTestActivity">
+        <activity android:name=".mvvm.BindViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".cameras.CameraxActivity">
+
+        </activity>
+        <activity android:name=".recy.RecyTestActivity"></activity>
         <activity android:name=".animation.Anim_B_Activity" />
         <activity android:name=".animation.Anim_A_Activity" />
         <activity android:name=".jetpac.MyActivity" />
@@ -28,9 +37,7 @@
         <activity android:name=".net.taskNetActivity" />
         <activity android:name=".net.LoadActivity" />
         <activity android:name=".mviews.mViewActivity" />
-        <activity android:name=".arouter.Main2Activity">
-
-        </activity>
+        <activity android:name=".arouter.Main2Activity" />
 
         <service android:name=".net.JobService" />
 
