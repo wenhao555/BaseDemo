@@ -8,9 +8,12 @@
         <import type="java.util.List" />
 
         <variable
-            name="account"
-            type="com.example.basedemo.model.Account" />
+            name="user"
+            type="com.example.basedemo.jetpac.User" />
 
+        <variable
+            name="handlers"
+            type="com.example.basedemo.jetpac.mvvm.Myhandlers" />
     </data>
 
     <LinearLayout
@@ -21,12 +24,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{account.name}" />
+            android:onClick="@{(view)->handlers.onClickName(user.name)}"
+            android:text="@{user.name}" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(account.age)}"
-            android:visibility="@{account.age == 1 ? View.GONE :View.VISIBLE}" />
+            android:text="@{String.valueOf(user.age)}"
+            android:visibility="@{user.age == 1 ? View.GONE :View.VISIBLE}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{handlers::onClickFriend}" />
     </LinearLayout>
 </layout>

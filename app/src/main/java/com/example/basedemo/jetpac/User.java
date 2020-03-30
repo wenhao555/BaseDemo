@@ -3,15 +3,55 @@ package com.example.basedemo.jetpac;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.basedemo.BR;
+
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.ObservableField;
+import androidx.databinding.ObservableInt;
+
 /**
  * Parcelable
  * 永久性保存对象
  * 通过序列化对象在网络中传递对象
  */
-public class User implements Parcelable
+
+public class User extends BaseObservable implements Parcelable
 {
     private String name;
     private int age;
+    /**
+     * 可观察的数据对象
+     */
+    public final ObservableField<String> nameOb = new ObservableField<>();
+    public final ObservableInt ageOb = new ObservableInt();
+
+    @Bindable
+    public String getName()
+    {
+        notifyPropertyChanged(BR.name);
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+
+    public static Creator<User> getCREATOR()
+    {
+        return CREATOR;
+    }
 
     /**
      * 描述
@@ -37,6 +77,11 @@ public class User implements Parcelable
     {
         dest.writeString(this.name);
         dest.writeInt(this.age);
+    }
+
+    public User()
+    {
+
     }
 
     public User(String name, int age)
